@@ -47,25 +47,56 @@ class ConsoleApp
         // when we need to store a mutable data then we will use var
         */
 
-        // type casting
-        int salary = 2322;
-        Console.WriteLine(salary);
-        double salary2 = salary;
-        Console.WriteLine(salary2);
+        // // type casting
+        // int salary = 2322;
+        // Console.WriteLine(salary);
+        // double salary2 = salary;
+        // Console.WriteLine(salary2);
         
         
         // implicit type conversion / automatic type conversion
         // int => double => long => float etc.
         // explicit type conversion / manual type conversion
-        int num1 = 10;
-        double num2 = num1;
-        double num3 = 409.555;
-        int num4 = Convert.ToInt32(num3);
-        double num5 = 43.333333;
-        string number = "200.6";
-        double num6 = double.Parse(number);
-        bool isSuccess = int.TryParse(number, out int result);
-        Console.WriteLine($"result = {result}");
-        Console.WriteLine($"isSuccess = {isSuccess}");
+        // int num1 = 10;
+        // double num2 = num1;
+        // double num3 = 409.555;
+        // int num4 = Convert.ToInt32(num3);
+        // double num5 = 43.333333;
+        // string number = "200.6";
+        // double num6 = double.Parse(number);
+        // bool isSuccess = int.TryParse(number, out int result);
+        // if (isSuccess)
+        // {
+        //     Console.WriteLine("Perfectly data converted");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Not data converted");
+        //     
+        // }
+        //
+        // Console.WriteLine($"result = {result}");
+        // Console.WriteLine($"isSuccess = {isSuccess}");
+
+        Console.Write("Enter your name : ");
+        string? name = Console.ReadLine();
+        Console.Write("Enter your age : ");
+        string? ageInput = Console.ReadLine();
+        bool isValidAge = int.TryParse(ageInput, out int age);
+        if (!isValidAge)
+        {
+            Console.WriteLine("Enter a valid age ");
+            return;
+        }
+        else
+        {
+            Console.WriteLine($"Hi, {name} Your are {age} years old");
+        }
+        // Console.WriteLine(name);
+        // Console.WriteLine(age);
+        // Console.WriteLine(age.GetType());
+        // Console.WriteLine(name?.GetType());
+        
+        Console.ReadLine();
     }
 }
