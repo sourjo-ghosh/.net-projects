@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 class ConsoleApp
 {
@@ -77,25 +78,85 @@ class ConsoleApp
         //
         // Console.WriteLine($"result = {result}");
         // Console.WriteLine($"isSuccess = {isSuccess}");
-
-        Console.Write("Enter your name : ");
-        string? name = Console.ReadLine();
-        Console.Write("Enter your age : ");
-        string? ageInput = Console.ReadLine();
-        bool isValidAge = int.TryParse(ageInput, out int age);
-        if (!isValidAge)
-        {
-            Console.WriteLine("Enter a valid age ");
-            return;
-        }
-        else
-        {
-            Console.WriteLine($"Hi, {name} Your are {age} years old");
-        }
+        // Console.Write("Enter your name : ");
+        // string? name = Console.ReadLine();
+        // Console.Write("Enter your age : ");
+        // string? ageInput = Console.ReadLine();
+        // bool isValidAge = int.TryParse(ageInput, out int age);
+        // if (!isValidAge)
+        // {
+        //     Console.WriteLine("Enter a valid age ");
+        //     return;
+        // }
+        // else
+        // {
+        //     Console.WriteLine($"Hi, {name} Your are {age} years old");
+        // }
         // Console.WriteLine(name);
         // Console.WriteLine(age);
         // Console.WriteLine(age.GetType());
         // Console.WriteLine(name?.GetType());
+
+
+
+        // C# does not have a single, official total number of operators because they can be categorized by functionality or by the number of operands they take. However, the language includes over 40 distinct operator symbols grouped into roughly 10 functional categories.
+        // there are three types of operators 
+        // 1. unary 
+        // 2. binary 
+        // 3. ternary 
+        // int a = 3;
+        // a++;
+        // a--;
+        // these are unary operators, Take exactly one operand.
+
+
+        // int num1 = 10;
+        // int num2 = 3;
+        // Console.WriteLine(num1 + num2);
+        // Console.WriteLine(num1 - num2);
+        // Console.WriteLine(num1 * num2);
+        // Console.WriteLine(num1 / num2);
+        // Console.WriteLine(num1 % num2);
+        // Console.WriteLine("Create a sum and avg of a 3 numbers");
+        //
+        // Console.Write("Enter first Number: ");
+        // string? inp1 = Console.ReadLine();
+        // Console.Write("Enter second Number: ");
+        // string? inp2 = Console.ReadLine();
+        // Console.Write("Enter third Number: ");
+        // string? inp3 = Console.ReadLine();
+        //
+        // bool IsInp1Valid = double.TryParse(inp1, out double num1);
+        // bool IsInp2Valid = double.TryParse(inp2, out double num2);
+        // bool IsInp3Valid = double.TryParse(inp3, out double num3);
+        // if (IsInp1Valid && IsInp2Valid && IsInp3Valid)
+        // {
+        //     double sum = num1 + num2 + num3;
+        //     double avg = (num1 + num2 + num3) / 3.0;
+        //     Console.WriteLine("The sum of the numbers is: " + sum);
+        //     Console.WriteLine("The avg of the numbers is: " + avg);
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Entered one or more number is valid");
+        // }
+
+        double fahrenheit;
+        
+        Console.Write("Enter fahrenheit in Celsius: ");
+
+        fahrenheit = Convert.ToDouble(Console.ReadLine());
+        // Console.WriteLine(fahrenheit);
+        
+        double celsius = (fahrenheit - 32) / 1.8;
+        Console.WriteLine($"celsius = {celsius:F2} degrees");
+
+        double c, f;
+        Console.Write("Enter celsius to fahrenheit: ");
+        c = Convert.ToDouble(Console.ReadLine());
+        f = (c * 1.8) + 32;
+        Console.WriteLine($"fahrenheit = {f:F2} degrees");
+        
         
         Console.ReadLine();
     }
