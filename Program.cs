@@ -1,40 +1,37 @@
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+﻿
+using System.ComponentModel;
 
 class ConsoleApp
 {
     public static void Main(string[] args)
     {
-        System.Console.WriteLine("Temperature converter");
-
-        System.Console.WriteLine("Choose 1 to celsius to fahrenheit");
-        System.Console.WriteLine("Choose 2 to fahrenheit to celsius");
-        int choice = Convert.ToInt32(Console.ReadLine());
-        bool isInvalid = choice >= 1 && choice <= 2;
-        if (!isInvalid)
+        while (true)
         {
-           System.Console.WriteLine("Invalid number");
-           return; 
+            System.Console.WriteLine("Enter a Number to get square");
+            System.Console.WriteLine("Type 'quit' to exit Or type help");
+            System.Console.WriteLine("====================");
+            string input = Console.ReadLine() ?? "";
+            // input = input.ToLower();
+            if(input.ToLower().Trim() == "quit")
+            {
+                System.Console.WriteLine("Goodbye");
+                break;
+            } else if(input.ToLower().Trim() == "help")
+            {
+                System.Console.WriteLine("Instructions: Please enter a whole number from 1 to 10. The program will calculate and display its square value. Type 'quit' at any time to close the application.");
+                System.Console.WriteLine();
+                continue;
+            }
+            if(int.TryParse(input, out int Number))
+            {
+                int square = Number * Number;
+                System.Console.WriteLine($"The square of {Number} is {square}");                
+            } else
+            {
+                System.Console.WriteLine("Invalid input. Please enter a valid number, 'help', or 'quit'.");
+            }
+            System.Console.WriteLine();
         }
-        switch(choice)
-        {
-            case 1:
-            double inputCel = Convert.ToDouble(Console.ReadLine());
-            double resultCel = (inputCel * 1.8) + 32;
-            System.Console.WriteLine($"{resultCel}F"); 
-            break;
-
-
-            case 2:
-            double inputFah = Convert.ToDouble(Console.ReadLine());
-            double resultFah = (inputFah - 32) * (5.0 / 9.0);
-            System.Console.WriteLine($"{resultFah}C"); 
-            break;
-            default:
-            System.Console.WriteLine("Invalid");
-            break;
-        };
     }
 
 }
